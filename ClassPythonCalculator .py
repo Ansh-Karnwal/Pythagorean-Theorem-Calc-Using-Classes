@@ -47,4 +47,4 @@ class HypCalculator(Calculator):
         return f"The hypotenuse is {self.answer} "
         
 calOBJ = Calculator(None, None)
-calOBJ.getInput()
+calOBJ.getInput(

@@ -3,18 +3,19 @@ class Calculator:
     def __init__(self, side, hyp):
         self.side = side
         self.hyp = hyp
-        
     def getInput(self):
         print("Welcome! Please start by choosing which side of the right triangle you want to calculate")
         while True:
             try:
-                options = int(input("Which side of the right triangle do you want to solve? \nType 1 for Side, Type 2 for Hypotenuse: "))
-                while options < 1 or options > 2:
+                options = int(input("Which side of the right triangle do you want to solve? \nType 0 to quit, Type 1 for Side, Type 2 for Hypotenuse: "))
+                while options < 0 or options > 2:
                     print("Enter a valid number!")
-                    options = int(input("Which side of the right triangle do you want to solve? \nType 1 for Side, Type 2 for Hypotenuse: "))
+                    options = int(input("Which side of the right triangle do you want to solve? \nType 0 to quit, Type 1 for Side, Type 2 for Hypotenuse: "))
                 break
             except ValueError:
                 print("Enter a valid number!")
+        if options == 0:
+            quit()
         if options == 1:
             self.side = float(input("Enter the side value: "))
             self.hyp = float(input("Enter the hypotenuse value: "))
@@ -44,6 +45,6 @@ class HypCalculator(Calculator):
         self.answer = round(sqrt(self.side **2 + self.side2 ** 2), 2)
     def __str__(self):
         return f"The hypotenuse is {self.answer} "
-
+        
 calOBJ = Calculator(None, None)
 calOBJ.getInput()

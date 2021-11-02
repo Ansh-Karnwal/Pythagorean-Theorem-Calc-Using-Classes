@@ -31,7 +31,8 @@ class SideCalculator(Calculator):
     def __init__(self, side, hyp):
         super().__init__(side, hyp)
     def side_calculator(self):
-        self.answer = round(sqrt(self.hyp **2 - self.side ** 2 ), 2)
+        self.answer = sqrt(self.hyp **2 - self.side ** 2 )
+        self.answer = round(self.answer, 2)
     def __str__(self):
         return f"The side is {self.answer}"
 
@@ -41,9 +42,12 @@ class HypCalculator(Calculator):
         self.side2 = side2
     def hyp_calculator(self):
         self.side2 = float(input("Enter another side value: "))
-        self.answer = round(sqrt(self.side **2 + self.side2 ** 2), 2)
+        self.answer = sqrt(self.side **2 + self.side2 ** 2)
+        self.answer = round(self.answer, 2)
     def __str__(self):
         return f"The hypotenuse is {self.answer} "
 
 calOBJ = Calculator(None, None)
 calOBJ.getInput()
+
+

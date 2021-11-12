@@ -27,6 +27,9 @@ class Calculator:
             while True:
                 try:
                     self.hyp = float(input("Enter the hypotenuse value: "))
+                    while self.hyp <= self.side:
+                         print("The hypotenuse has to be greater than the side!")
+                         self.hyp = float(input("Enter the hypotenuse value: "))
                     break
                 except ValueError:
                     print("Enter a valid number!")
